@@ -2,7 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
-var path = require('path');
+var path    = require('path');
 
 /**
  *  Define the sample application.
@@ -130,6 +130,7 @@ var SampleApp = function() {
 	self.configure = function(app) {
 		app.set('views', __dirname + '/views');
 		app.set('view engine', 'jade');
+		app.use(express.cookieParser('your secret here'));		
 		app.use(express.session());
 		app.use(express.static(path.join(__dirname, 'public')));
 
