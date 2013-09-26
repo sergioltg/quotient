@@ -106,8 +106,7 @@ var SampleApp = function() {
         };
 
         self.routes['/'] = function(req, res) {
-            res.setHeader('Content-Type', 'text/html');
-            res.send(self.cache_get('index.html') );
+			res.render('index', { title: 'Express' });
         };
     };
 
@@ -119,12 +118,26 @@ var SampleApp = function() {
     self.initializeServer = function() {
         self.createRoutes();
         self.app = express.createServer();
+		
+		self.configure(self.app)
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
     };
+	
+	self.configure = function(app) {
+		app.set('views', __dirname + '/views');
+		app.set('view engine', 'jade');
+		app.use(express.session());
+		app.use(express.static(path.join(__dirname, 'public')));
+
+		// development only
+		if ('development' == app.get('env')) {
+		  app.use(express.errorHandler());
+		}
+	}
 
 
     /**

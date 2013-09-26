@@ -1,0 +1,16 @@
+{
+  "name": "quotient",
+  "version": "0.0.0",
+  "authors": [
+    "c9sg6392 <sergio.gomes@mincom.com>"
+  ],
+  "description": "Quotes for Suppliers",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.0.8",
+    "bootstrap": "~3.0.0",
+    "angular-ui-router": "~0.2.0",
+    "angular-bootstrap": "~0.6.0"
+  }
+}
