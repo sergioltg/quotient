@@ -2,7 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
-
+var path = require('path');
 
 /**
  *  Define the sample application.
