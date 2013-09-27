@@ -130,7 +130,7 @@ var SampleApp = function() {
 	self.configure = function(app) {
 		app.set('views', __dirname + '/views');
 		app.set('view engine', 'jade');
-		app.use(express.cookieParser('your secret here'));		
+		app.use(express.cookieParser('your secret here'));
 		app.use(express.session());
 		app.use(express.static(path.join(__dirname, 'public')));
 
